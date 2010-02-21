@@ -22,11 +22,30 @@ class Moq
         );
     }
     
-    public function getArguments($method, $call)
+    public function getArguments($method, $call = 0)
     {
         if (isset($this->args[$method][$call]))
         {
             return $this->args[$method][$call];
+        }
+        else
+        {
+            return null;
+        }
+    }
+    
+    public function getArgument($method, $arg = 0, $call = 0)
+    {
+        if ($args = $this->getArguments($method, $call))
+        {
+            if (isset($args[$arg]))
+            {            
+                return $args[$arg];
+            }
+            else
+            {
+                return null;
+            }
         }
         else
         {

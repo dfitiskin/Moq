@@ -31,6 +31,18 @@ class MoqTest extends PHPUnit_Framework_TestCase
         );
     }
     
+    public function testGetArgument()
+    {
+        $moq = new Moq();
+        
+        $moq->execute('this is test argument');
+        
+        $this->assertEquals(
+            'this is test argument',
+            $moq->getArgument('execute', 0, 0)
+        );
+    }
+    
     public function testGetCallCount()
     {
         $moq = new Moq();
