@@ -33,4 +33,16 @@ class Moq
             return null;
         }
     }
+    
+    public function getCallCount($method)
+    {
+        if (isset($this->args[$method]))
+        {
+            return count($this->args[$method]);
+        }
+        else
+        {
+            return 0;
+        }
+    }
 }
