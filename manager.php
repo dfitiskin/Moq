@@ -1,9 +1,18 @@
 <?php
 
-class Moq
+include_once('object.php');
+
+class MoqManager
 {
     private $args = array();
     private $methods = array();
+    
+    public $object = null;
+    
+    public function __construct()
+    {
+        $this->object = new MoqObject($this);
+    }
     
     public function __call($name, $args)
     {
