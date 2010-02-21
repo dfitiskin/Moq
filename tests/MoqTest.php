@@ -5,7 +5,7 @@ include_once('moq.php');
 
 class MoqTest extends PHPUnit_Framework_TestCase
 {
-    public function testTextNode()
+    public function testAddMethodSimpleNode()
     {
         $moq = new Moq();
         $moq->addMethod(
