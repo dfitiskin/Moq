@@ -24,44 +24,34 @@ class Moq
     
     public function getArguments($method, $call = 0)
     {
+        $result = null;
         if (isset($this->args[$method][$call]))
         {
-            return $this->args[$method][$call];
+            $result = $this->args[$method][$call];
         }
-        else
-        {
-            return null;
-        }
+        return $result;
     }
     
     public function getArgument($method, $arg = 0, $call = 0)
     {
+        $result = null;
         if ($args = $this->getArguments($method, $call))
         {
             if (isset($args[$arg]))
             {            
-                return $args[$arg];
-            }
-            else
-            {
-                return null;
+                $result = $args[$arg];
             }
         }
-        else
-        {
-            return null;
-        }
+        return $result;
     }
     
     public function getCallCount($method)
     {
+        $result = 0;
         if (isset($this->args[$method]))
         {
-            return count($this->args[$method]);
+            $result = count($this->args[$method]);
         }
-        else
-        {
-            return 0;
-        }
+        return $result;
     }
 }
