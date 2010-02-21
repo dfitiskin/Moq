@@ -1,7 +1,7 @@
 <?php
 
 include_once('PHPUnit/Framework/TestCase.php');
-include_once('moq.php');
+include_once('manager.php');
 
 class MoqTest extends PHPUnit_Framework_TestCase
 {
@@ -9,7 +9,7 @@ class MoqTest extends PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->manager = new Moq();
+        $this->manager = new MoqManager();
         $this->object = $this->manager->object;
     }
     

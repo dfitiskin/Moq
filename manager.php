@@ -2,7 +2,7 @@
 
 include_once('object.php');
 
-class Moq
+class MoqManager
 {
     private $args = array();
     private $methods = array();
