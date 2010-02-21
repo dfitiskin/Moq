@@ -24,7 +24,7 @@ class MoqManager
         }
     }
     
-    public function addMethod($name, $return)
+    public function setReturnValue($name, $return)
     {
         $this->methods[$name] = array(
             'return'    => $return,

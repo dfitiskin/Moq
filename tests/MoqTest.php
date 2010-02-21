@@ -15,7 +15,7 @@ class MoqTest extends PHPUnit_Framework_TestCase
     
     public function testAddMethodSimple()
     {
-        $this->manager->addMethod(
+        $this->manager->setReturnValue(
             'execute',
             3
         );
