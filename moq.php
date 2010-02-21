@@ -1,5 +1,7 @@
 <?php
 
+include_once('object.php');
+
 class Moq
 {
     private $args = array();
@@ -60,20 +62,5 @@ class Moq
             $result = count($this->args[$method]);
         }
         return $result;
-    }
-}
-
-class MoqObject
-{
-    private $manager = null;
-    
-    public function __construct($manager)
-    {
-        $this->manager = $manager;
-    }
-    
-    public function __call($name, $args)
-    {
-        return $this->manager->__call($name, $args);
     }
 }
