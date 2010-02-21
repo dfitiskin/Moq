@@ -19,7 +19,7 @@ class MoqTest extends PHPUnit_Framework_TestCase
         );
     }
     
-    public function testArgumentValue()
+    public function testGetArguments()
     {
         $moq = new Moq();
         
@@ -31,7 +31,7 @@ class MoqTest extends PHPUnit_Framework_TestCase
         );
     }
     
-    public function testMethodCallCount()
+    public function testGetCallCount()
     {
         $moq = new Moq();
         
