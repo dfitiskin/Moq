@@ -15,7 +15,7 @@ class MoqTest extends PHPUnit_Framework_TestCase
         
         $this->assertEquals(
             3,
-            $moq->execute()
+            $moq->object->execute()
         );
     }
     

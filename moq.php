@@ -5,6 +5,13 @@ class Moq
     private $args = array();
     private $methods = array();
     
+    public $object = null;
+    
+    public function __construct()
+    {
+        $this->object = new MoqObject($this);
+    }
+    
     public function __call($name, $args)
     {
         $this->args[$name][] = $args;
@@ -53,5 +60,20 @@ class Moq
             $result = count($this->args[$method]);
         }
         return $result;
+    }
+}
+
+class MoqObject
+{
+    private $manager = null;
+    
+    public function __construct($manager)
+    {
+        $this->manager = $manager;
+    }
+    
+    public function __call($name, $args)
+    {
+        return $this->manager->__call($name, $args);
     }
 }
