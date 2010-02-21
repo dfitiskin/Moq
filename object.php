@@ -11,6 +11,6 @@ class MoqObject
     
     public function __call($name, $args)
     {
-        return $this->manager->__call($name, $args);
+        return $this->manager->handleCall($name, $args);
     }
 }

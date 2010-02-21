@@ -14,7 +14,7 @@ class MoqManager
         $this->object = new MoqObject($this);
     }
     
-    public function __call($name, $args)
+    public function handleCall($name, $args)
     {
         $this->args[$name][] = $args;
         
