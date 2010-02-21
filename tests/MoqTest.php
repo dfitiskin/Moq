@@ -35,12 +35,14 @@ class MoqTest extends PHPUnit_Framework_TestCase
     {
         $moq = new Moq();
         
-        $moq->execute();
-        $moq->execute();
-        $moq->execute();
+        $count = 5;
+        for ($i = 0; $i < $count; $i++)
+        {
+            $moq->execute();
+        }
         
         $this->assertEquals(
-            3,
+            $count,
             $moq->getCallCount('execute')
         );
     }
