@@ -5,17 +5,23 @@ include_once('moq.php');
 
 class MoqTest extends PHPUnit_Framework_TestCase
 {
+    private $moq = null;
+    
+    public function setUp()
+    {
+        $this->moq = new Moq();
+    }
+    
     public function testAddMethodSimple()
     {
-        $moq = new Moq();
-        $moq->addMethod(
+        $this->moq->addMethod(
             'execute',
             3
         );
         
         $this->assertEquals(
             3,
-            $moq->object->execute()
+            $this->moq->object->execute()
         );
     }
     
